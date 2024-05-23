@@ -17,7 +17,7 @@ if [ ! -e $1 ]; then
     echo "path $1 does not exist"
 fi
 
-TOTAL=`tree $1 | grep -o '[0-9]\+ files' | grep -o '[0-9]\+'`
+TOTAL=`find $1 -type f | wc -l`
 LINES=`grep -r $2 $1 | wc -l`
 
 echo "The number of files are $TOTAL and the number of matching lines are $LINES"
