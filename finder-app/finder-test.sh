@@ -10,16 +10,6 @@ WRITESTR=AELD_IS_FUN
 WRITEDIR=/tmp/aeld-data
 username=$(cat conf/username.txt)
 
-# add toolchain
-export PATH=$PATH:/home/kim/Code/Coursera/toolchain/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/bin
-
-# clean previous build
-make clean
-
-# compile natively
-unset CROSS_COMPILE
-make
-
 if [ $# -lt 3 ]
 then
 	echo "Using default value ${WRITESTR} for string to write"
