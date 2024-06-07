@@ -91,11 +91,11 @@ ${CROSS_COMPILE}readelf -a bin/busybox | grep "program interpreter"
 ${CROSS_COMPILE}readelf -a bin/busybox | grep "Shared library"
 
 # TODO: Add library dependencies to rootfs
-cd /home/kim/Code/Coursera/toolchain/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu/aarch64-none-linux-gnu/libc/
-cp lib/ld-linux-aarch64.so.1 $OUTDIR/rootfs/lib
-cp lib64/libm.so.6 $OUTDIR/rootfs/lib64
-cp lib64/libresolv.so.2 $OUTDIR/rootfs/lib64
-cp lib64/libc.so.6 $OUTDIR/rootfs/lib64
+cd $FINDER_APP_DIR/lib
+cp ld-linux-aarch64.so.1 $OUTDIR/rootfs/lib
+cp libm.so.6 $OUTDIR/rootfs/lib64
+cp libresolv.so.2 $OUTDIR/rootfs/lib64
+cp libc.so.6 $OUTDIR/rootfs/lib64
 
 # TODO: Make device nodes
 sudo mknod -m 666 ${OUTDIR}/rootfs/dev/null c 1 3
