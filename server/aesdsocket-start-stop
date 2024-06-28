@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # chkconfig: 35 90 12
 # description: Foo server
@@ -8,9 +8,6 @@ PIDFILE=/var/run/aesdsocket.pid
 NAME="AESDsocket"
 AESDEXEC=/usr/bin/aesdsocket
 AESDARGS="-d"
-
-# Get function from functions library
-. /etc/init.d/functions
 
 ### main logic ###
 case "$1" in
